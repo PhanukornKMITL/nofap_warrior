@@ -1,90 +1,85 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+
 class LoginPage extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HexColor("#ffc492"),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(
-              height: 200.0,
-            ),
-            Text(
-              "Welcome",
-              style: TextStyle(
-                  color: HexColor("#322c24"),
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
-              "you can't be successful unless you do it",
-              style: TextStyle(
-                color: HexColor("#a8794e"),
-                fontSize: 15,
-              ),
-            ),
-            SizedBox(
-              height: 50.0,
-            ),
-            Container(
-              width: 275.0,
-              height: 65.0,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: HexColor("#20252b"),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      textStyle:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                  onPressed: () {},
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                        color: HexColor('#dddcdf'),
+        backgroundColor: HexColor("#ffc492"),
+        //กัน buttom overflow
+        //resizeToAvoidBottomInset: false,
+        body: SafeArea(
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.all(50.0),
+              child: SingleChildScrollView( //ใช้เพื่อให้จอเลื่อนได้ จะได้แก้ปัญหา buttom overflow
+                child: Column(
+                  children: <Widget>[
+                    CircleAvatar(
+                      child: Icon(Icons.map),
+                      radius: 60.0,
+                    ),
+                    SizedBox(height: 50.0,),
+                    TextFormField(
+                      decoration: new InputDecoration(
+                          border: new OutlineInputBorder(
+                            borderRadius: const BorderRadius.all(
+                              const Radius.circular(30.0),
+                            ),
+                          ),
+                          filled: true,
+                          hintStyle: new TextStyle(color: Colors.grey[800]),
+                          hintText: "Username",
+                          fillColor: Colors.white70),
+                    ),
+                    SizedBox(height: 20.0,),
+                    TextFormField(
+                      decoration: new InputDecoration(
+                          border: new OutlineInputBorder(
+                            borderRadius: const BorderRadius.all(
+                              const Radius.circular(30.0),
+                            ),
+                          ),
+                          filled: true,
+                          hintStyle: new TextStyle(color: Colors.grey[800]),
+                          hintText: "Password",
+                          fillColor: Colors.white70),
+                      obscureText: true,
+                    ),
+                    SizedBox(height: 20.0,),
+                    Material(
+                      child: MaterialButton(
+                        minWidth: 300.0,
+                        height: 50.0,
+                        onPressed: (){
+                          Navigator.pushReplacementNamed(context, "/profile");
+                        },
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Colors.lightBlueAccent)
+                        ),
+                        color: Colors.lightBlueAccent,
+                        child: Text('Log In',style: TextStyle(color: Colors.white),),
                       ),
                     ),
-                  )),
-                  
-            ),
-             SizedBox(
-              height: 10.0,
-            ),
+                    Row(
+                      children: <Widget>[
+                        SizedBox(width: 160,),
+                        TextButton(onPressed: (){}, child: Text("Forgot Password?",style: TextStyle(color: Colors.grey[700])),),
+                      ],
+                    ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Don't have an accout ? ",
-                  style: TextStyle(
-                    color: HexColor("#a8794e"),
-                    fontSize: 15,
-                  ),
+                    
+
+                  ],
                 ),
-                 TextButton(
-                 style: TextButton.styleFrom(
-                   primary: HexColor('#20252b'),
-                 ),
-                 onPressed: (){},
-                 child: Text('Sign up'),
-                ),
-              ],
+              ),
             ),
-            
-          ],
+          ),
         ),
-      ),
-    );
+      );
+
   }
 }

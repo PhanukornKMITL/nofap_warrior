@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nofap_warriors/screen/landing_page.dart';
 import 'package:nofap_warriors/screen/login.dart';
 
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Nunito',
       ),
       routes: {
-        "/":(context) => LoginPage(),
+        "/":(context) => LandingPage(),
+        "/login":(context) => LoginPage(),
        
       },
       initialRoute: "/",
