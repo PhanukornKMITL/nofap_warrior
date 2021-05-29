@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nofap_warriors/screen/Home/home.dart';
 import 'package:nofap_warriors/screen/landing_page.dart';
 import 'package:nofap_warriors/screen/login.dart';
 import 'package:nofap_warriors/screen/register.dart';
@@ -23,9 +24,10 @@ class MyApp extends StatelessWidget {
         "/":(context) => LandingPage(),
         "/login":(context) => LoginPage(),
         "/register":(context) => RegisterPage(),
+        "/home": (context) => HomePage(),
        
       },
-      initialRoute: "/",
+      initialRoute: "/home",
     );
   }
 }
