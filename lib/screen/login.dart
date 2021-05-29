@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:nofap_warriors/shared/textformfield.dart';
 
 
 class LoginPage extends StatelessWidget {
@@ -7,7 +8,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: HexColor("#ffc492"),
+         backgroundColor: HexColor("#ffc492"),
         //กัน buttom overflow
         //resizeToAvoidBottomInset: false,
         body: SafeArea(
@@ -17,59 +18,53 @@ class LoginPage extends StatelessWidget {
               child: SingleChildScrollView( //ใช้เพื่อให้จอเลื่อนได้ จะได้แก้ปัญหา buttom overflow
                 child: Column(
                   children: <Widget>[
-                    CircleAvatar(
-                      child: Icon(Icons.map),
-                      radius: 60.0,
-                    ),
+                   
                     SizedBox(height: 50.0,),
-                    TextFormField(
-                      decoration: new InputDecoration(
-                          border: new OutlineInputBorder(
-                            borderRadius: const BorderRadius.all(
-                              const Radius.circular(30.0),
-                            ),
-                          ),
-                          filled: true,
-                          hintStyle: new TextStyle(color: Colors.grey[800]),
-                          hintText: "Username",
-                          fillColor: Colors.white70),
-                    ),
+                   textFormField("Username", false),
                     SizedBox(height: 20.0,),
-                    TextFormField(
-                      decoration: new InputDecoration(
-                          border: new OutlineInputBorder(
-                            borderRadius: const BorderRadius.all(
-                              const Radius.circular(30.0),
-                            ),
-                          ),
-                          filled: true,
-                          hintStyle: new TextStyle(color: Colors.grey[800]),
-                          hintText: "Password",
-                          fillColor: Colors.white70),
-                      obscureText: true,
-                    ),
+                   textFormField("Password", true),
                     SizedBox(height: 20.0,),
-                    Material(
-                      child: MaterialButton(
-                        minWidth: 300.0,
-                        height: 50.0,
-                        onPressed: (){
-                          Navigator.pushReplacementNamed(context, "/profile");
-                        },
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                            side: BorderSide(color: Colors.lightBlueAccent)
-                        ),
-                        color: Colors.lightBlueAccent,
-                        child: Text('Log In',style: TextStyle(color: Colors.white),),
+                  ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: HexColor("#20252b"),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
+                      textStyle:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: () {},
+                  child: Text(
+                    'Sign in',
+                    style: TextStyle(
+                      color: HexColor('#dddcdf'),
                     ),
+                  )
+                      
+                    ),
+
                     Row(
-                      children: <Widget>[
-                        SizedBox(width: 160,),
-                        TextButton(onPressed: (){}, child: Text("Forgot Password?",style: TextStyle(color: Colors.grey[700])),),
-                      ],
-                    ),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                          "Don't have an accout ? ",
+                        style: TextStyle(
+                          color: HexColor("#20252b"),
+                          fontSize: 15,
+                        ),
+                      ),
+                      TextButton(
+                        style: TextButton.styleFrom(
+                          primary: HexColor('#20252b'),
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/register');
+                        },
+                        child: Text('Sign up'),
+                      ),
+                    ],
+                  ),
 
                     
 

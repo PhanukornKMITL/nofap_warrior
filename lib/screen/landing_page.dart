@@ -26,7 +26,7 @@ class LandingPage extends StatelessWidget {
             Text(
               "you can't be successful unless you do it",
               style: TextStyle(
-                color: HexColor("#a8794e"),
+                color: HexColor("#20252b"),
                 fontSize: 15,
               ),
             ),
@@ -46,44 +46,55 @@ class LandingPage extends StatelessWidget {
                       ),
                       textStyle:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                  onPressed: () {},
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                        color: HexColor('#dddcdf'),
+                  onPressed: () {
+                     Navigator.pushNamed(context, "/login");
+                  },
+                  child: Row(
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'login',
+                          style: TextStyle(
+                            color: HexColor('#dddcdf'),
+                          ),
+                        ),
                       ),
-                    ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(90.0, 0.0, 0.0, 60.0),
+                        child: Icon(
+                          Icons.arrow_right_alt_sharp,
+                          color: Colors.white,
+                          size: 30.0,
+                        ),
+                      ),
+                    ],
                   )),
-                  
             ),
-             SizedBox(
+            SizedBox(
               height: 10.0,
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "Don't have an accout ? ",
                   style: TextStyle(
-                    color: HexColor("#a8794e"),
+                    color: HexColor("#20252b"),
                     fontSize: 15,
                   ),
                 ),
-                 TextButton(
-                 style: TextButton.styleFrom(
-                   primary: HexColor('#20252b'),
-                 ),
-                 onPressed: (){
+                TextButton(
+                  style: TextButton.styleFrom(
+                    primary: HexColor('#20252b'),
+                  ),
+                  onPressed: () {
                     Navigator.pushNamed(context, "/login");
-                 },
-                 child: Text('Sign up'),
+                  },
+                  child: Text('Sign up'),
                 ),
               ],
             ),
-            
           ],
         ),
       ),
