@@ -43,7 +43,77 @@ class _HomeFragmentState extends State<HomeFragment> {
           ),
         ),
         SizedBox(
-          height: 50.0,
+          height: 20.0,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Column(
+              children: <Widget>[
+                Text(
+                  '14',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                  ),
+                ),
+                Text(
+                  'hours',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(width: 20.0),
+            Column(
+              children: <Widget>[
+                Text(
+                  '14',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                  ),
+                ),
+                Text(
+                  'minutes',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(width: 20.0),
+            Column(
+              children: <Widget>[
+                Text(
+                  '14',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                  ),
+                ),
+                Text(
+                  'seconds',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 30.0,
         ),
         Row(
           children: <Widget>[
