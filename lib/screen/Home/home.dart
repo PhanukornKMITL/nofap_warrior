@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.business),
-        label: 'Business',
+        label: 'Community',
        backgroundColor: HexColor('#ffc38f'),
       ),
       BottomNavigationBarItem(
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
         
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.settings),
+        icon: Icon(Icons.account_circle_outlined),
         label: 'Settings',
         backgroundColor: HexColor('#ffc38f'),
        

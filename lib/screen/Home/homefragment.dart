@@ -8,6 +8,15 @@ class HomeFragment extends StatefulWidget {
 }
 
 class _HomeFragmentState extends State<HomeFragment> {
+
+  String days = "250";
+  String hours = "14";
+  String minutes = "14";
+  String seconds = "14";
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,7 +44,7 @@ class _HomeFragmentState extends State<HomeFragment> {
           ),
         ),
         Text(
-          '250',
+          days,
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -51,7 +60,7 @@ class _HomeFragmentState extends State<HomeFragment> {
             Column(
               children: <Widget>[
                 Text(
-                  '14',
+                  hours,
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -72,7 +81,7 @@ class _HomeFragmentState extends State<HomeFragment> {
             Column(
               children: <Widget>[
                 Text(
-                  '14',
+                  minutes,
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -93,7 +102,7 @@ class _HomeFragmentState extends State<HomeFragment> {
             Column(
               children: <Widget>[
                 Text(
-                  '14',
+                  seconds,
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -129,10 +138,14 @@ class _HomeFragmentState extends State<HomeFragment> {
             ),
           ],
         ),
-        TableCalendar(
-          firstDay: DateTime.utc(2010, 10, 16),
-          lastDay: DateTime.utc(2030, 3, 14),
-          focusedDay: DateTime.now(),
+
+        Container(
+          color: Colors.white,
+          child: TableCalendar(
+            firstDay: DateTime.utc(2010, 10, 16),
+            lastDay: DateTime.utc(2030, 3, 14),
+            focusedDay: DateTime.now(),
+          ),
         ),
       ],
     );
