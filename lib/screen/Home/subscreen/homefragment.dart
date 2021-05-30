@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
 import 'package:nofap_warriors/screen/estimate/estimate.dart';
+import 'package:nofap_warriors/screenlogic/appbar_manager.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class HomeFragment extends StatefulWidget {
 
-  Function changeSubScreen;
-  HomeFragment({this.changeSubScreen});
+
   
 
   @override
@@ -60,7 +60,7 @@ class _HomeFragmentState extends State<HomeFragment> {
 
   @override
   Widget build(BuildContext context) {
-    return  change ? EstimatePage(): Column(
+    return   Column(
       children: <Widget>[
         SizedBox(
           height: 20.0,
@@ -90,10 +90,8 @@ class _HomeFragmentState extends State<HomeFragment> {
             ),
             RawMaterialButton(
               onPressed: () {
-               //Navigator.pushNamed(context, '/estimate');
-               setState(() {
-                 change = true;
-               });
+               Navigator.pushNamed(context, '/estimate');
+               
               },
               elevation: 2.0,
               fillColor: HexColor('#ffc38f'),

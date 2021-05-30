@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:nofap_warriors/screen/estimate/estimate.dart';
 import 'package:nofap_warriors/screen/home/subscreen/homefragment.dart';
+import 'package:nofap_warriors/screenlogic/appbar_manager.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -13,6 +14,7 @@ class HomePageState extends State<HomePage> {
 
   int _selectedIndex = 0;
   bool appbarVisible = false;
+  
   static  List<Widget> _widgetOptions = <Widget>[
     HomeFragment(),
     Text(
@@ -37,13 +39,16 @@ class HomePageState extends State<HomePage> {
   }
 
   void visibleAppBar(bool boolean){
-
+    setState(() {
+      appbarVisible = boolean;
+    });
+    
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appbarVisible ? AppBar(backgroundColor: HexColor('#ffc38f'),) : null,
+       
         backgroundColor: HexColor("#1f242a"),
         body: SafeArea(
     child: SingleChildScrollView(
