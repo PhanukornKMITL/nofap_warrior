@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:nofap_warriors/screen/Home/homefragment.dart';
+import 'package:nofap_warriors/screen/estimate/estimate.dart';
+import 'package:nofap_warriors/screen/home/subscreen/homefragment.dart';
 
 class HomePage extends StatefulWidget {
+
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
 
   int _selectedIndex = 0;
+  bool appbarVisible = false;
   static  List<Widget> _widgetOptions = <Widget>[
     HomeFragment(),
     Text(
@@ -22,24 +25,30 @@ class _HomePageState extends State<HomePage> {
     ),
     Text(
       'Index 3: Settings',
-      
     ),
+    EstimatePage(),
+    
   ];
 
-  void _onItemTapped(int index) {
+  void onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
 
+  void visibleAppBar(bool boolean){
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: appbarVisible ? AppBar(backgroundColor: HexColor('#ffc38f'),) : null,
         backgroundColor: HexColor("#1f242a"),
         body: SafeArea(
     child: SingleChildScrollView(
           child: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: _widgetOptions.elementAt( _selectedIndex),
       ),
     ),
         ),
@@ -56,8 +65,8 @@ class _HomePageState extends State<HomePage> {
        backgroundColor: HexColor('#ffc38f'),
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.school),
-        label: 'School',
+        icon: Icon(Icons.notifications),
+        label: 'Notification',
         backgroundColor: HexColor('#ffc38f'),
         
       ),
@@ -68,9 +77,9 @@ class _HomePageState extends State<HomePage> {
        
       ),
     ],
-    currentIndex: _selectedIndex,
+    currentIndex:  _selectedIndex,
     selectedItemColor: HexColor("#1f242a"),
-    onTap: _onItemTapped,
+    onTap: onItemTapped,
         ),
       );
   }

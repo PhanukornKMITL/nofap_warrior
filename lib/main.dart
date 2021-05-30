@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nofap_warriors/screen/Home/home.dart';
+import 'package:nofap_warriors/screen/estimate/estimate.dart';
 import 'package:nofap_warriors/screen/landing_page.dart';
 import 'package:nofap_warriors/screen/login.dart';
 import 'package:nofap_warriors/screen/register.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         "/login":(context) => LoginPage(),
         "/register":(context) => RegisterPage(),
         "/home": (context) => HomePage(),
+        '/estimate': (context) => EstimatePage(),
        
       },
       initialRoute: "/home",

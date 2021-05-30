@@ -1,25 +1,66 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:intl/intl.dart';
+import 'package:nofap_warriors/screen/estimate/estimate.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class HomeFragment extends StatefulWidget {
+
+  Function changeSubScreen;
+  HomeFragment({this.changeSubScreen});
+  
+
   @override
   _HomeFragmentState createState() => _HomeFragmentState();
 }
 
 class _HomeFragmentState extends State<HomeFragment> {
-
   String days = "250";
   String hours = "14";
   String minutes = "14";
   String seconds = "14";
+  Timer _timer;
+  bool change = false;
+  
 
+  //DateTime lasted = DateTime.utc(2021, DateTime.may, 28);
 
+  @override
+  void initState() {
+    super.initState();
 
+    Duration difference;
+    DateTime currentTime;
+    DateTime lastedTime;
+    // sets first value
+
+    // defines a timer
+    lastedTime = DateTime.now();
+    _timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+      setState(() {
+        currentTime = DateTime.now();
+        difference = currentTime.difference(lastedTime);
+        days = difference.inDays.toString();
+        hours = (difference.inHours % 24).toString();
+        minutes = (difference.inMinutes % 60).toString();
+        seconds = (difference.inSeconds % 60).toString();
+
+        //print("Days ${difference.inDays} Hours ${difference.inHours % 24} minutes ${difference.inMinutes % 60} seconds ${difference.inSeconds % 60}");
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return  change ? EstimatePage(): Column(
       children: <Widget>[
         SizedBox(
           height: 20.0,
@@ -35,13 +76,36 @@ class _HomeFragmentState extends State<HomeFragment> {
         SizedBox(
           height: 90.0,
         ),
-        Text(
-          'Days',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 50.0,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(width: 97.0,),
+            Text(
+              'Days',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 50.0,
+              ),
+            ),
+            RawMaterialButton(
+              onPressed: () {
+               //Navigator.pushNamed(context, '/estimate');
+               setState(() {
+                 change = true;
+               });
+              },
+              elevation: 2.0,
+              fillColor: HexColor('#ffc38f'),
+              child: Icon(
+                Icons.calendar_today_outlined,
+                size: 20.0,
+              ),
+             
+              
+              shape: CircleBorder(),
+            ),
+          ],
         ),
         Text(
           days,
@@ -138,7 +202,6 @@ class _HomeFragmentState extends State<HomeFragment> {
             ),
           ],
         ),
-
         Container(
           color: Colors.white,
           child: TableCalendar(
@@ -149,5 +212,6 @@ class _HomeFragmentState extends State<HomeFragment> {
         ),
       ],
     );
+    
   }
 }
