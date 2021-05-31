@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:nofap_warriors/services/auth.dart';
 import 'package:nofap_warriors/shared/textformfield.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -8,6 +9,10 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  String email = '';
+  String password = '';
+  String confirmPassword = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,15 +30,38 @@ class _RegisterPageState extends State<RegisterPage> {
                   SizedBox(
                     height: 50.0,
                   ),
-                  textFormField("Username", false),
+                  TextFormField(
+                     style: TextStyle(color: Colors.white, fontFamily: 'roboto'),
+                      decoration:
+                          textFormFieldDecoration.copyWith(hintText: 'Email'),
+                      validator: (val) => val.isEmpty ? 'Enter an email' : null,
+                      onChanged: (val) {
+                        setState(() => email = val);
+                      }),
                   SizedBox(
                     height: 20.0,
                   ),
-                  textFormField("Password", true),
+                  TextFormField(
+                      style: TextStyle(color: Colors.white, fontFamily: 'roboto'),
+                      obscureText: true,
+                      decoration: textFormFieldDecoration.copyWith(
+                          hintText: 'Password'),
+                      validator: (val) => val.isEmpty ? 'Enter an email' : null,
+                      onChanged: (val) {
+                        setState(() => password = val);
+                      }),
                   SizedBox(
                     height: 20.0,
                   ),
-                  textFormField("Comfirm Password", true),
+                  TextFormField(
+                     style: TextStyle(color: Colors.white, fontFamily: 'roboto'),
+                      obscureText: true,
+                      decoration: textFormFieldDecoration.copyWith(
+                          hintText: 'Comfirm Password'),
+                      validator: (val) => val.isEmpty ? 'Enter an email' : null,
+                      onChanged: (val) {
+                        setState(() => confirmPassword = val);
+                      }),
                   SizedBox(
                     height: 20.0,
                   ),
@@ -47,7 +75,10 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                           textStyle: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold)),
-                      onPressed: () {},
+                      onPressed: () async {
+                        await AuthService()
+                            .registerWithEmailAndPassword(email, password);
+                      },
                       child: Text(
                         'Sign up',
                         style: TextStyle(

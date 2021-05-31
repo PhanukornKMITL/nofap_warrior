@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "39465432097",
+    "project_id": "nofapwarrior",
+    "storage_bucket": "nofapwarrior.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39465432097:android:00b91bbe9b2aa0c3b9df60",
+        "android_client_info": {
+          "package_name": "com.example.nofap_warriors"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39465432097-0fc1r4nkrglq5uhjlrcorau3ctpebah5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChJexB3mmwx5gVxxZOu9MiY01tJ5G5XOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39465432097-0fc1r4nkrglq5uhjlrcorau3ctpebah5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

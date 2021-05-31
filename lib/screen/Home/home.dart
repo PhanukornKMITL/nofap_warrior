@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:nofap_warriors/screen/estimate/estimate.dart';
 import 'package:nofap_warriors/screen/home/subscreen/homefragment.dart';
-import 'package:nofap_warriors/screenlogic/appbar_manager.dart';
+import 'package:nofap_warriors/services/auth.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -25,9 +25,26 @@ class HomePageState extends State<HomePage> {
       'Index 2: School',
       
     ),
-    Text(
-      'Index 3: Settings',
-    ),
+     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: HexColor("#20252b"),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          textStyle: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold)),
+                      onPressed: () async {
+                        await AuthService()
+                            .signOut();
+                      },
+                      child: Text(
+                        'Sign out',
+                        style: TextStyle(
+                          color: HexColor('#dddcdf'),
+                        ),
+                      )),
     EstimatePage(),
     
   ];

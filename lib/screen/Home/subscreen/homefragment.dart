@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
 import 'package:nofap_warriors/screen/estimate/estimate.dart';
-import 'package:nofap_warriors/screenlogic/appbar_manager.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class HomeFragment extends StatefulWidget {
@@ -194,7 +193,7 @@ class _HomeFragmentState extends State<HomeFragment> {
                 color: HexColor('#a9998e'),
                 child: Align(
                   alignment: Alignment.center,
-                  child: Text('asdsa'),
+                  child: Text('Your progress'),
                 ),
               ),
             ),

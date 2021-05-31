@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:nofap_warriors/screenlogic/appbar_manager.dart';
 import 'package:nofap_warriors/shared/clickable_card.dart';
 
 class EstimatePage extends StatefulWidget {

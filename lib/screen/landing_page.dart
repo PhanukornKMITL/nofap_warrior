@@ -89,7 +89,7 @@ class LandingPage extends StatelessWidget {
                     primary: HexColor('#20252b'),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, "/login");
+                    Navigator.pushNamed(context, "/register");
                   },
                   child: Text('Sign up'),
                 ),
