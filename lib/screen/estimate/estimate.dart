@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:nofap_warriors/screenlogic/appbar_manager.dart';
+import 'package:nofap_warriors/shared/clickable_card.dart';
 
 class EstimatePage extends StatefulWidget {
   @override
@@ -33,70 +34,19 @@ class _EstimatePageState extends State<EstimatePage> {
               SizedBox(height: 20.0,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Container(
-                  child: Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: <Widget>[
-                          const ListTile(
-                            leading: Icon(Icons.assignment_turned_in),
-                            title: Text("I'm doing great", style: TextStyle(fontWeight: FontWeight.bold),),
-                            subtitle:
-                                Text('Everything alright.'),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-
+                child: clickableCard(Icon(Icons.assignment_turned_in),"I'm doing great", 'Everything alright.', ()=> print("1")),
                 
               ),
               SizedBox(height: 20.0,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Container(
-                  child: Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: <Widget>[
-                          const ListTile(
-                            leading: Icon(Icons.assignment_turned_in),
-                            title: Text("I'm doing great", style: TextStyle(fontWeight: FontWeight.bold),),
-                            subtitle:
-                                Text('Everything alright.'),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-
+                child: clickableCard(Icon(Icons.warning_rounded),"I have hard time to pass", "I have urge today.", ()=> print("2")),
                 
               ),
               SizedBox(height: 20.0,),
-              Padding(
+               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Container(
-                  child: Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: <Widget>[
-                          const ListTile(
-                            leading: Icon(Icons.assignment_turned_in),
-                            title: Text("I'm doing great", style: TextStyle(fontWeight: FontWeight.bold),),
-                            subtitle:
-                                Text('Everything alright.'),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-
+                child: clickableCard(Icon(Icons.replay),"I want to try again", 'Relapsed.', ()=> print("3")),
                 
               ),
             ],
