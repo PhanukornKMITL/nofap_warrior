@@ -4,6 +4,12 @@ import 'package:nofap_warriors/services/auth.dart';
 import 'package:nofap_warriors/shared/textformfield.dart';
 
 class LoginPage extends StatefulWidget {
+
+  final Function changeWidget;
+
+  LoginPage({this.changeWidget});
+
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -87,7 +93,8 @@ class _LoginPageState extends State<LoginPage> {
                           primary: HexColor('#20252b'),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/register');
+                         // Navigator.pushNamed(context, '/register');
+                         widget.changeWidget();
                         },
                         child: Text('Sign up'),
                       ),

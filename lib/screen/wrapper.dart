@@ -12,10 +12,8 @@ import 'package:provider/provider.dart';
      print(user?.uid);
 
       if(user !=null){
-        print('Hello');
         return HomePage();
       } else {
-        print('Hi');
         return LandingPage();
       }
    }

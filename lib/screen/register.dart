@@ -4,6 +4,13 @@ import 'package:nofap_warriors/services/auth.dart';
 import 'package:nofap_warriors/shared/textformfield.dart';
 
 class RegisterPage extends StatefulWidget {
+
+  final Function changeWidget;
+
+  RegisterPage({this.changeWidget});
+
+
+
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
@@ -12,6 +19,7 @@ class _RegisterPageState extends State<RegisterPage> {
   String email = '';
   String password = '';
   String confirmPassword = '';
+
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +108,8 @@ class _RegisterPageState extends State<RegisterPage> {
                           primary: HexColor('#20252b'),
                         ),
                         onPressed: () {
-                          Navigator.pop(context);
+                          //Navigator.pop(context);
+                          widget.changeWidget();
                         },
                         child: Text('Sign in'),
                       ),
