@@ -73,8 +73,8 @@ class _LandingPageState extends State<LandingPage> {
                         textStyle: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold)),
                     onPressed: () {
-                      //Navigator.pushNamed(context, "/login");
-                      goToLoginPage();
+                      Navigator.pushNamed(context, "/home");
+                      //goToLoginPage();
                     },
                     child: Row(
                       children: [

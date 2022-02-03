@@ -29,7 +29,8 @@ class MyApp extends StatelessWidget {
           fontFamily: 'uni-sans',
         ),
         routes: {
-          "/": (context) => Wrapper(),
+          //"/": (context) => Wrapper(),
+          "/": (context) => HomePage(),
           "/landing": (context) => LandingPage(),
           "/login": (context) => LoginPage(),
           "/register": (context) => RegisterPage(),
