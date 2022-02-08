@@ -12,6 +12,8 @@ class _SettingFragmentState extends State<SettingFragment> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
+      padding: new EdgeInsets.only(top: 25.0),
       child: Column(
         children: [
           ElevatedButton(
