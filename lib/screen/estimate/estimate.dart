@@ -33,25 +33,28 @@ class _EstimatePageState extends State<EstimatePage> {
               SizedBox(height: 20.0,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: clickableCard(Icon(Icons.assignment_turned_in),"I'm doing great", 'Everything alright.', ()=> print("1")),
+                child: clickableCard(Icon(Icons.assignment_turned_in),"I'm doing great", 'Everything alright.', ()=> print('1'), Colors.green[200]),
                 
               ),
               SizedBox(height: 20.0,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: clickableCard(Icon(Icons.warning_rounded),"I have hard time to pass", "I have urge today.", ()=> print("2")),
+                child: clickableCard(Icon(Icons.warning_rounded),"I have hard time to pass", "I have urge today.", ()=> print("2"), Colors.yellow[200]),
                 
               ),
               SizedBox(height: 20.0,),
                Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: clickableCard(Icon(Icons.replay),"I want to try again", 'Relapsed.', ()=> print("3")),
-                
+                child: clickableCard(Icon(Icons.replay),"I want to try again", 'Relapsed.', () => goToRelapsedScreen(context), Colors.red[200]),
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  void goToRelapsedScreen(BuildContext context) {
+    Navigator.pushNamed(context, "/relapsed");
   }
 }

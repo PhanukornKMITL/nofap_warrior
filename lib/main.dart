@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nofap_warriors/models/user.dart';
 import 'package:nofap_warriors/screen/Home/home.dart';
 import 'package:nofap_warriors/screen/estimate/estimate.dart';
+import 'package:nofap_warriors/screen/estimate/relapsed.dart';
 import 'package:nofap_warriors/screen/landing_page.dart';
 import 'package:nofap_warriors/screen/login.dart';
 import 'package:nofap_warriors/screen/register.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
           "/register": (context) => RegisterPage(),
           "/home": (context) => HomePage(),
           '/estimate': (context) => EstimatePage(),
+          "/relapsed": (context) => Relapsed(),
         },
         initialRoute: "/",
       ),

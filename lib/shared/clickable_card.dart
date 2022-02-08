@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 Widget clickableCard(
-        Icon icon, String title, String subtitle, Function callback) =>
-    GestureDetector(
-      onTap: callback,
-      child: Container(
-        child: Card(
+        Icon icon, String title, String subtitle, Function callback, Color color) =>
+    Container(
+      child: Card(
+        child: InkWell(
+          highlightColor: color,
+          onTap: callback,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
