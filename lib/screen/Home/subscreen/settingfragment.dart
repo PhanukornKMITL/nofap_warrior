@@ -15,6 +15,7 @@ class _SettingFragmentState extends State<SettingFragment> {
       alignment: Alignment.center,
       padding: new EdgeInsets.only(top: 25.0),
       child: Column(
+        
         children: [
           ElevatedButton(
               style: ElevatedButton.styleFrom(
